@@ -34,3 +34,24 @@ AI responses, and manage follow-ups.
 ## Status
 
 🚧 Initial development
+## System Architecture
+
+1. Gmail receives customer emails
+2. n8n triggers on new email and filters spam
+3. AI (Google Gemini) classifies email into Sales, Support, or Complaint
+4. AI sentiment/priority detection flags urgent issues
+5. Category-specific AI generates a professional reply
+6. Email data is logged into a structured database (Google Sheets initially, PostgreSQL in future)
+7. Urgent/high-risk emails trigger a Telegram alert
+8. (Future) Admin dashboard displays analytics and conversation history
+
+## Current Progress
+
+- [x] Basic email automation working (n8n + Gmail + Gemini)
+- [x] AI classification (Sales/Support/Complaint)
+- [ ] Sentiment/priority detection
+- [ ] Telegram alerts
+- [ ] Database upgrade (PostgreSQL)
+- [ ] Admin dashboard
+- [ ] Authentication
+- [ ] Production deployment
